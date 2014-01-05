@@ -1,0 +1,26 @@
+/* =================================================================================================
+STYLE (style.scss)
+================================================================================================= */
+
+@import "reset";
+@import "settings";
+@import "font-awesome";
+@import "mixins";
+@import "grid";
+@import "default-styles";
+@import "variables";
+@import "ie";
+@import "480less";
+
+@media only screen and (min-width: 481px) {
+	@import "481up";
+}
+@media only screen and (min-width: 768px) {
+	@import "768up";
+}
+@media only screen and (min-width: 1030px) {
+	@import "1030up";
+}
+@media only screen and (min-width: 1240px) {
+	@import "1240up";
+}
