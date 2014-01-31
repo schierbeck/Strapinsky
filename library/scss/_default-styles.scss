@@ -12,6 +12,12 @@ DEFAULT CLASSES (_default_style.scss)
 
 .overflow-hidden { overflow: hidden; }
 
+.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .wrap {
   	margin: 0 auto; // auto for centering
   	max-width: $page_max_width + $page_padding;
@@ -64,28 +70,13 @@ img {
     max-width: 100%;
 }
 
-.table {
-    display: table;
-}
+.table { display: table; }
 .cell {
     display: table-cell;
     float: none;
 }
-
-.black {
-    background-color: $black;
-}
-.gray {
-	background: $gray;
-}
-.green {
-    background: $green;
-}
-.red {
-    background: $red;
-}
-.yellow {
-    background: $yellow;
+.round {
+	@include border-radius(50%, 50%, 50%, 50%);
 }
 .rounded {
     @include border-radius();
@@ -96,3 +87,25 @@ img {
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
+// Create background and text color classes
+// Set thoose classes in _settings.scss
+@for $i from 0 to length($color_classes) {
+	$thisColor: unquote(nth($color_classes, $i+1));
+	$name: nth($thisColor, 1);
+	$value: nth($thisColor, 2);
+	.bg-#{$name} {
+    	background-color: $value;
+	}
+	.color-#{$name} {
+    	color: $value;
+	}
+}
+/* In future Sass (v3.3)
+$color_classes: ("black": #333333, "green": #00FF00);
+@each $name, $val in $color_classes {
+	.bg-#{$name} {
+    	background: $val;
+	}
+}
+*/

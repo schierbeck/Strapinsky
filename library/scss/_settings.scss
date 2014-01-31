@@ -23,9 +23,16 @@ $yellow:						#FFDA51;
 
 $body_background:				#F0F0F0;
 $button_color:					#00BBD1;
-$menu_color:        			#222;
+$menu_color:        			$black;
 $link_color:           			#E14B56;
 
+// Create classes for background and text colors
+$color_classes:(				('black', $black),
+								('gray', $gray),
+								('green', $green),
+								('red', $red),
+								('yellow', $yellow),
+								('white', $white));
 
 // FONTS
 $body_text:         			Helvetica, Arial, sans-serif;

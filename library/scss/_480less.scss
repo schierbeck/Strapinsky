@@ -6,6 +6,14 @@
 GENERAL
 ******************************************************************/
 
+// 16:9 proportion
+.bg-big {
+	display: block;
+	height: 0;
+	padding-bottom: 56.25%;
+	background: red;
+}
+
 body {
 	background: $body_background;
 	color: $black;
@@ -71,7 +79,11 @@ MENU
 	    @include transition();
 
 	    &.fixed-icon {
+	    	position: fixed;
 	        background: darken($menu_color, 20%);
+	        margin-top: 0;
+	        right: $page_padding;
+	        top: $margin;
 	        @include border-radius(50%, 50%, 50%, 50%);
 	    }
 	}
@@ -123,7 +135,7 @@ MENU
 	                width: 100%;
 	                @include transition();
 
-	                &.current_page_item { background: darken($menu_color, 20%); }
+	                &.current_page_item { background: darken($menu_color, 10%); }
 	                &:active, &:hover { background: darken($menu_color, 2%); }
 	            }
 

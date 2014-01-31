@@ -2,24 +2,20 @@
 MIXINS (_mixins.scss)
 ================================================================================================= */
 
-.tc {
-    text-align: center;
-}
+// TEXT CENTERING
+.tc { text-align: center; }
 
+// BLOCK CENTERING
 .middle {
     float: none;
     display: block;
-    // Don't use margin: 0 auto; Overrides .m, .mt, .mb
+    // Don't use margin: 0 auto; overides other margins
     margin-left: auto;
     margin-right: auto;
     clear: both;
 }
 
-a {
-	color: $green;
-}
-
-// GRADIENTS
+// GRADIENT
 @mixin gradient($from, $to) {
 	background-color: $from; // Fallback if old browser
   	background-image: -moz-linear-gradient($from, $to);
@@ -44,11 +40,13 @@ a {
 	box-shadow: $left $top $blur $color;
 }
 
+// TRANSITION
 @mixin transition($x: all 0.3s) {
 	-webkit-transition: $x;
 	transition: $x;
 }
 
+// WORD BREAK
 @mixin word-break() {
 	-ms-word-break: break-all;
     word-break: break-all;
